@@ -13,7 +13,7 @@
 // Gutenberg block templates
 // https://www.billerickson.net/gutenberg-block-templates/
 
- function register_scot_board_cpt() {
+function register_scot_board_cpt() {
      $post_type = 'scot_board_member';
      $labels = array(
          'name' => 'SCOT Board Members',
@@ -45,7 +45,7 @@
          ),
          'has_archive' => true,
          'rewrite' => array(
-            'slug' => 'board'
+            'slug' => 'about-scot/board'
          ),
          'query_var' => false,
          'template' => array(
@@ -57,10 +57,10 @@
      );
 
      register_post_type( $post_type, $args );
- }
- add_action( 'init', 'register_scot_board_cpt' );
+}
+add_action( 'init', 'register_scot_board_cpt' );
 
- function register_scot_board_clan_taxonomy() {
+function register_scot_board_clan_taxonomy() {
     $taxonomy = 'scot_board_clans';
     $object = 'scot_board_member';
     $keyword = 'Clan';
@@ -88,9 +88,8 @@
     );
 
     register_taxonomy( $taxonomy, $object, $args );
- }
- add_action( 'init', 'register_scot_board_clan_taxonomy' );
-
+}
+add_action( 'init', 'register_scot_board_clan_taxonomy' );
 
  // Change Title Placeholder
  // https://wordpress.stackexchange.com/questions/195627/custom-post-type-title-placeholder
